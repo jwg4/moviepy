@@ -13,6 +13,7 @@ from moviepy.utils import close_all_clips
 
 from .test_helper import TMP_DIR, FONT
 
+@pytest.mark.imagemagick
 def test_PR_306():
 
     assert TextClip.list('font') != []
@@ -22,6 +23,7 @@ def test_PR_306():
          TextClip.list('blah')
     close_all_clips(locals())
 
+@pytest.mark.imagemagick
 def test_PR_339():
     # In caption mode.
     TextClip(txt='foo', color='white', font=FONT, size=(640, 480),
